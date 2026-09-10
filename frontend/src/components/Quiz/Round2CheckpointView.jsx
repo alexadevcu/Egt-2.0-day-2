@@ -188,7 +188,7 @@ export default function Round2CheckpointView({ onBackToHall, onTriggerToast }) {
           return;
         }
         if (res.status === 403) {
-          setErrorMessage('YOU MUGGLES WERE TOO SLOW FOR ROUND 2! Only the top 20 qualifying teams can enter.');
+          setErrorMessage('YOU MUGGLES WERE TOO SLOW FOR ROUND 2! Only the top 21 qualifying teams can enter.');
           setUiState('error');
           if (onTriggerToast) onTriggerToast('⛔ YOU MUGGLES WERE TOO SLOW FOR ROUND 2!');
           return;
@@ -256,7 +256,7 @@ export default function Round2CheckpointView({ onBackToHall, onTriggerToast }) {
           return;
         }
         if (res.status === 403) {
-          setErrorMessage('YOU MUGGLES WERE TOO SLOW FOR ROUND 2! Only the top 20 qualifying teams can enter.');
+          setErrorMessage('YOU MUGGLES WERE TOO SLOW FOR ROUND 2! Only the top 21 qualifying teams can enter.');
           setUiState('error');
           return;
         }

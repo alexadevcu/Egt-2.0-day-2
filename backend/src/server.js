@@ -366,7 +366,7 @@ app.get('/api/admin/status', authenticateAdmin, async (req, res) => {
     status: config ? config.status : 'UNKNOWN',
     timeRemaining: config ? Math.max(0, new Date(config.end_time).getTime() - Date.now()) : 0,
     qualifiedCount: qualifiedCount || 0,
-    maxQualifiers: config ? config.max_qualifiers : 20,
+    maxQualifiers: config ? config.max_qualifiers : 21,
     submissions: totalSubmissions || 0,
     hints: hintMap,
     qualificationsTable: qualificationsTable || []
@@ -507,7 +507,7 @@ app.get('/api/round2/current', authenticate, async (req, res) => {
     .maybeSingle();
 
   if (!sub) {
-    return res.status(403).json({ error: 'YOU MUGGLES WERE TOO SLOW FOR ROUND 2! Only the top 20 teams qualify.', qualified: false });
+    return res.status(403).json({ error: 'YOU MUGGLES WERE TOO SLOW FOR ROUND 2! Only the top 21 teams qualify.', qualified: false });
   }
 
   const { data: assignment, error } = await supabase
@@ -630,7 +630,7 @@ app.post('/api/round2/submit', authenticate, async (req, res) => {
     .maybeSingle();
 
   if (!sub) {
-    return res.status(403).json({ error: 'YOU MUGGLES WERE TOO SLOW FOR ROUND 2! Only the top 20 teams qualify.' });
+    return res.status(403).json({ error: 'YOU MUGGLES WERE TOO SLOW FOR ROUND 2! Only the top 21 teams qualify.' });
   }
 
   const { data: assignment } = await supabase
@@ -736,7 +736,7 @@ app.post('/api/round2/scan_qr', authenticate, async (req, res) => {
     .maybeSingle();
 
   if (!sub) {
-    return res.status(403).json({ error: 'YOU MUGGLES WERE TOO SLOW FOR ROUND 2! Only the top 20 teams qualify.' });
+    return res.status(403).json({ error: 'YOU MUGGLES WERE TOO SLOW FOR ROUND 2! Only the top 21 teams qualify.' });
   }
 
   const { data: dest } = await supabase.from('round2_destinations').select('*').eq('qr_identifier', qrCode).single();

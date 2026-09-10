@@ -112,7 +112,7 @@ export default function Round2PlayView({ participant, onBackToHall, onTriggerToa
         }
         if (res.status === 403) {
           setUiState('error');
-          setErrorMessage('YOU MUGGLES WERE TOO SLOW FOR ROUND 2! Only the top 20 qualifying teams can enter.');
+          setErrorMessage('YOU MUGGLES WERE TOO SLOW FOR ROUND 2! Only the top 21 qualifying teams can enter.');
           return;
         }
         throw new Error(data.error || 'Failed to load round 2 state');

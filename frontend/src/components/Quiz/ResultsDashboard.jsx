@@ -158,10 +158,10 @@ export default function ResultsDashboard({
               </h2>
 
               <p className="sb-details" style={{ fontSize: '1.1rem', marginTop: '0.8rem', color: '#cbd4f0' }}>
-                {isQualified && 'Outstanding! You are among the Top 20 squads and have unlocked Round 2.'}
+                {isQualified && 'Outstanding! You are among the Top 21 squads and have unlocked Round 2.'}
                 {isIncorrect && 'The codeword was incorrect. Please verify your letter arithmetic and try again.'}
                 {isExpired && 'Time has expired. The vault is sealed.'}
-                {!isQualified && !isIncorrect && !isExpired && 'Only the Top 20 squads advance to Round 2. All 20 qualification slots have been claimed by faster wizards!'}
+                {!isQualified && !isIncorrect && !isExpired && 'Only the Top 21 squads advance to Round 2. All 21 qualification slots have been claimed by faster wizards!'}
               </p>
             </div>
 
@@ -223,7 +223,7 @@ export default function ResultsDashboard({
                 fontWeight: '700'
               }}
             >
-              ✦ ROUND 2 LOCKED · TOP 20 QUALIFIERS ONLY ✦
+              ✦ ROUND 2 LOCKED · TOP 21 QUALIFIERS ONLY ✦
             </div>
           )}
           <button
